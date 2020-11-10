@@ -1,11 +1,9 @@
-import React, { useEffect, useRef, useState } from "react"
-import { Temporal } from "proposal-temporal"
+import React, { useRef } from "react"
 
 import { Song } from "./song"
 import { Play } from "./play"
 import { Pause } from "./pause"
 import { Bar } from "./bar"
-import Axios from "axios"
 
 import useAudioPlayer from "../../hooks/useAudioPlayer"
 
@@ -47,7 +45,8 @@ function AudioPlayer() {
 						console.log({ time })
 					}}
 				/>
-				<button onClick={() => setVolume(0.5)}></button>
+				<button onClick={() => setVolume(0.5)}>+</button>
+				<button onClick={() => setVolume(0.5)}>-</button>
 			</div>
 		</div>
 	)
