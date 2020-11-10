@@ -42,7 +42,6 @@ function AudioPlayer() {
 					duration={duration}
 					onTimeUpdate={(time: number) => {
 						setClickedTime(time)
-						console.log({ time })
 					}}
 				/>
 				<button onClick={() => setVolume(0.5)}>+</button>
