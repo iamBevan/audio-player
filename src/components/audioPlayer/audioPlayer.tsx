@@ -44,8 +44,8 @@ function AudioPlayer() {
 						setClickedTime(time)
 					}}
 				/>
-				<button onClick={() => setVolume(0.5)}>+</button>
-				<button onClick={() => setVolume(0.5)}>-</button>
+				<button onClick={() => setVolume(1)}>+</button>
+				<button onClick={() => setVolume(0.2)}>-</button>
 			</div>
 		</div>
 	)
