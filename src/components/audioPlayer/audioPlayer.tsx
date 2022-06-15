@@ -1,11 +1,10 @@
-import React, { useRef } from "react"
+import { useRef } from "react"
 
 import { Song } from "./song"
-import { Play } from "./play"
-import { Pause } from "./pause"
 import { Bar } from "./bar"
 
 import useAudioPlayer from "../../hooks/useAudioPlayer"
+import { PlayPause } from "./play-pause"
 
 function AudioPlayer() {
 	const {
@@ -32,11 +31,7 @@ function AudioPlayer() {
 				songArtist='Daft Punk ft. Julian Casablancas'
 			/>
 			<div className='controls'>
-				{playing ? (
-					<Pause handleClick={() => setPlaying(false)} />
-				) : (
-					<Play handleClick={() => setPlaying(true)} />
-				)}
+				<PlayPause playing={playing} handleClick={setPlaying} />
 				<Bar
 					curTime={curTime}
 					duration={duration}

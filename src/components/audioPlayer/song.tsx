@@ -1,5 +1,3 @@
-import React from "react"
-
 function Song(props: any) {
 	const { songName, songArtist } = props
 

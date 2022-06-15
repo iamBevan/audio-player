@@ -1,17 +1,7 @@
-import React from "react"
-// import moment from "moment"
-// import momentDurationFormatSetup from "moment-duration-format"
-
 function Bar(props: any) {
 	const { duration, curTime, onTimeUpdate } = props
 
 	const curPercentage = (curTime / duration) * 100
-
-	function formatDuration(duration: any) {
-		// return moment.duration(duration, "seconds")
-		return duration
-		// .format("mm:ss", { trim: false })
-	}
 
 	function calcClickedTime(e: any) {
 		const clickPositionInPage = e.pageX
@@ -54,7 +44,8 @@ function Bar(props: any) {
 	return (
 		<div className='bar'>
 			<span className='bar__time'>
-				{new Date(curTime * 1000).toISOString().substr(11, 8)}
+				{curTime &&
+					new Date(curTime * 1000).toISOString().substring(11, 19)}
 			</span>
 			<div
 				className='bar__progress'
@@ -69,7 +60,8 @@ function Bar(props: any) {
 				/>
 			</div>
 			<span className='bar__time'>
-				{new Date(duration * 1000).toISOString().substr(11, 8)}
+				{duration &&
+					new Date(duration * 1000).toISOString().substring(11, 19)}
 			</span>
 		</div>
 	)
